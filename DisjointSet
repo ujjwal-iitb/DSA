@@ -40,4 +40,14 @@ class DSU {
     bool sameParent(int u, int v){
         return findParent(u)==findParent(v);
     }
+
+    int getCountOfComponents(int n){
+        int count = 0; 
+        for(int i = 0; i<n; i++){
+            if(findParent(i)==i && size[i]>0){
+                count++;
+            }
+        }
+        return count;
+    }
 };
